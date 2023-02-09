@@ -1,5 +1,5 @@
 #set project
-gcloud config set project snappy-pages
+gcloud config set project neuraxis-test
 #set region
 gcloud config set run/region europe-west6
 #deploy to gcloud
