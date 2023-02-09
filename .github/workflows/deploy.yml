@@ -19,5 +19,12 @@ jobs:
       uses: 'google-github-actions/auth@v1'
       with:
         workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
-        service_account: 'deploy@neuraxis-test.iam.gserviceaccount.com'     
+        service_account: 'deploy@neuraxis-test.iam.gserviceaccount.com'
+  
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build --pull --rm -f Dockerfile -t  cd-ci-test:latest "."
+    
+    - name: Deploy
+      run: ./depoy.sh
       
