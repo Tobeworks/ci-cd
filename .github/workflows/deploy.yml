@@ -22,9 +22,5 @@ jobs:
         service_account: 'deploy@neuraxis-test.iam.gserviceaccount.com'
   
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build --pull --rm -f Dockerfile -t  cd-ci-test:latest "."
-    
-    - name: Deploy
-      run: ./depoy.sh
+
       
